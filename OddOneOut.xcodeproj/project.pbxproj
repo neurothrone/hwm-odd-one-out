@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F8D2B3F2942EA2D002AA901 /* OddOneOutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D2B3E2942EA2D002AA901 /* OddOneOutApp.swift */; };
+		2F8D2B3F2942EA2D002AA901 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D2B3E2942EA2D002AA901 /* AppMain.swift */; };
 		2F8D2B412942EA2D002AA901 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D2B402942EA2D002AA901 /* ContentView.swift */; };
 		2F8D2B432942EA2E002AA901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8D2B422942EA2E002AA901 /* Assets.xcassets */; };
 		2F8D2B462942EA2E002AA901 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8D2B452942EA2E002AA901 /* Preview Assets.xcassets */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		2F8D2B3B2942EA2D002AA901 /* OddOneOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OddOneOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F8D2B3E2942EA2D002AA901 /* OddOneOutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddOneOutApp.swift; sourceTree = "<group>"; };
+		2F8D2B3E2942EA2D002AA901 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		2F8D2B402942EA2D002AA901 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2F8D2B422942EA2E002AA901 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F8D2B452942EA2E002AA901 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		2F8D2B3D2942EA2D002AA901 /* OddOneOut */ = {
 			isa = PBXGroup;
 			children = (
-				2F8D2B3E2942EA2D002AA901 /* OddOneOutApp.swift */,
+				2F8D2B3E2942EA2D002AA901 /* AppMain.swift */,
 				2F8D2B402942EA2D002AA901 /* ContentView.swift */,
 				2F8D2B422942EA2E002AA901 /* Assets.xcassets */,
 				2F8D2B472942EA2E002AA901 /* OddOneOut.entitlements */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F8D2B412942EA2D002AA901 /* ContentView.swift in Sources */,
-				2F8D2B3F2942EA2D002AA901 /* OddOneOutApp.swift in Sources */,
+				2F8D2B3F2942EA2D002AA901 /* AppMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
