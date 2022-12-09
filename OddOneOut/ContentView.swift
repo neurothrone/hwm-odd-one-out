@@ -9,19 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
   private static let gridSize = 10
+  private static let maxLevels = 8
+  private static let maxLives = 3
 
-  @State var images = [
+  @State private var images = [
     "elephant", "giraffe", "hippo", "monkey", "panda",
     "parrot", "penguin", "pig", "rabbit", "snake"
   ]
 
-  @State var layout = Array(
+  @State private var layout = Array(
     repeating: "empty",
     count: gridSize * gridSize
   )
 
-  @State var currentLevel = 1
-  @State var isGameOver = false
+  @State private var currentLevel = 1
+  @State private var livesRemaining = Self.maxLives
+  @State private var isGameOver = false
 
   var body: some View {
     content
@@ -35,9 +38,16 @@ struct ContentView: View {
   private var content: some View {
     ZStack {
       VStack {
-        Text("Odd One Out")
-          .font(.system(size: 36, weight: .thin))
-          .fixedSize()
+        HStack {
+          Text("Level: \(currentLevel) / \(Self.maxLevels)")
+          Spacer()
+          Text("Odd One Out")
+            .font(.system(size: 36, weight: .thin))
+            .fixedSize()
+          Spacer()
+          Text("Lives: \(livesRemaining) / \(Self.maxLives)")
+        }
+        .padding(.horizontal)
 
         ForEach(.zero..<Self.gridSize, id: \.self) { row in
           HStack {
@@ -59,11 +69,14 @@ struct ContentView: View {
         }
       }
       .opacity(isGameOver ? 0.2 : 1)
+      .disabled(isGameOver)
 
       if isGameOver {
         VStack {
           Text("Game over!")
             .font(.largeTitle)
+
+          Text(livesRemaining <= .zero ? "You lose." : "You win.")
 
           Button("Play Again", action: restartGame)
           .font(.headline)
@@ -119,7 +132,7 @@ extension ContentView {
   }
 
   private func createLevel() {
-    if currentLevel == 9 {
+    if currentLevel > Self.maxLevels {
       withAnimation {
         isGameOver = true
       }
@@ -143,12 +156,19 @@ extension ContentView {
       currentLevel -= 1
     }
 
+    livesRemaining -= 1
+
+    if livesRemaining <= .zero {
+      isGameOver = true
+    }
+
     // Create a new layout
     createLevel()
   }
 
   private func restartGame() {
     currentLevel = 1
+    livesRemaining = Self.maxLives
     isGameOver = false
     createLevel()
   }
