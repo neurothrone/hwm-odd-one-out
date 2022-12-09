@@ -68,7 +68,12 @@ struct ContentView: View {
           }
         }
       }
-      .opacity(isGameOver ? 0.2 : 1)
+      .opacity(isGameOver ? 0.4 : 1)
+      .background(
+        Rectangle()
+          .fill(backgroundColor)
+      )
+      .blendMode(isGameOver ? .multiply : .normal)
       .disabled(isGameOver)
 
       if isGameOver {
@@ -88,6 +93,12 @@ struct ContentView: View {
         }
       }
     }
+  }
+
+  private var backgroundColor: Color {
+    guard isGameOver else { return .clear }
+
+    return livesRemaining <= .zero ? .red : .blue
   }
 }
 
