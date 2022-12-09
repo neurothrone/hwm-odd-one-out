@@ -73,7 +73,7 @@ struct ContentView: View {
         Rectangle()
           .fill(backgroundColor)
       )
-      .blendMode(isGameOver ? .multiply : .normal)
+      .blendMode(isGameOver ? .screen : .normal)
       .disabled(isGameOver)
 
       if isGameOver {
@@ -86,7 +86,7 @@ struct ContentView: View {
           Button("Play Again", action: restartGame)
           .font(.headline)
           .foregroundColor(.white)
-          .buttonStyle(.borderless)
+          .buttonStyle(.plain)
           .padding(20)
           .background(.blue)
           .clipShape(Capsule())
